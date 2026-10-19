@@ -5,23 +5,26 @@ export interface ServiceInfo {
   name: string;
   description: string;
   points: string[];
+  featured?: boolean;
 }
 
 export const SERVICES: ServiceInfo[] = [
   {
     id: "infidelity",
-    name: "Relationship & Infidelity",
+    name: "Relationship & Infidelity Investigations",
+    featured: true,
     description:
-      "Discreet, lawful fact-finding when you need clarity about a partner's activities and want facts rather than guesswork.",
+      "When something doesn't feel right, you deserve facts rather than more sleepless nights. We find out what is really happening, lawfully and discreetly.",
     points: [
-      "Lawful observation and surveillance",
-      "Open-source and social media review",
-      "Time-stamped, documented findings",
+      "Discreet surveillance and timeline verification",
+      "Digital footprint and public profile analysis (OSINT)",
+      "Date and location verified photo and video evidence",
+      "Pre-marital background and lifestyle checks",
     ],
   },
   {
     id: "scam_recovery",
-    name: "Scam Investigation & Tracing",
+    name: "Scam & Fraud Tracing",
     description:
       "We investigate online fraud, trace where we lawfully can, and prepare an evidence pack for your bank, platform or law enforcement.",
     points: [
@@ -44,6 +47,11 @@ export const SERVICES: ServiceInfo[] = [
 ];
 
 export const SERVICE_IDS = SERVICES.map((s) => s.id);
+
+// Every "Start" CTA links here so the intake form opens with the service preselected.
+export function startHref(id: ServiceType): string {
+  return `/start?type=${id}`;
+}
 
 export function serviceName(id: ServiceType): string {
   return SERVICES.find((s) => s.id === id)?.name ?? id;

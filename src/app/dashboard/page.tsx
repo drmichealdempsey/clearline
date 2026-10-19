@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { requireRole } from "@/lib/auth";
-import { serviceName } from "@/lib/constants";
+import { serviceName, startHref } from "@/lib/constants";
 import { firstName, formatDate } from "@/lib/format";
 import type { Case, CaseUpdate } from "@/lib/types";
 import { StatusBadge } from "@/components/StatusBadge";
@@ -35,7 +35,7 @@ export default async function DashboardPage() {
             {name ? `Hello, ${name}` : "Your cases"}
           </h1>
         </div>
-        <Link href="/start" className="btn-secondary">
+        <Link href={startHref("infidelity")} className="btn-secondary">
           Start a new case
         </Link>
       </div>
@@ -46,7 +46,7 @@ export default async function DashboardPage() {
           <p className="mx-auto mt-2 max-w-md text-sm text-zinc-400">
             When you submit a request it will appear here, along with updates from your investigator.
           </p>
-          <Link href="/start" className="btn-primary mt-6">
+          <Link href={startHref("infidelity")} className="btn-primary mt-6">
             Start a Case
           </Link>
         </div>

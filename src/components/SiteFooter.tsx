@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
+import { startHref } from "@/lib/constants";
 
 export function SiteFooter() {
   return (
@@ -13,7 +14,7 @@ export function SiteFooter() {
           </p>
         </div>
         <div className="flex flex-col gap-2 sm:items-end">
-          <Link href="/start" className="text-zinc-300 hover:text-brass-300">
+          <Link href={startHref("infidelity")} className="text-zinc-300 hover:text-brass-300">
             Start a case
           </Link>
           <Link href="/login" className="text-zinc-300 hover:text-brass-300">

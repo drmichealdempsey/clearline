@@ -12,8 +12,8 @@ The brand name lives in [`src/config/site.ts`](src/config/site.ts). Change it th
 
 | Route | Who | What |
 | --- | --- | --- |
-| `/` | Public | Landing page with the three services and a Start a Case button |
-| `/start` | Public | Intake form: choose a service, describe the situation, attach files, then create an account or log in. The case is submitted once the visitor is signed in. |
+| `/` | Public | Landing page centred on relationship & infidelity investigations, with a browser-only red-flag self-check, services and process |
+| `/start` | Public | Intake form (`?type=infidelity\|scam_recovery\|background_check` preselects the service): choose a service, describe the situation, attach files, then create an account or log in. The case is submitted once the visitor is signed in. |
 | `/login`, `/signup` | Public | Email and password auth |
 | `/dashboard` | Clients | The client's own cases with a progress bar and the latest update |
 | `/dashboard/cases/[id]` | Clients | Status, updates timeline, messages, files, payment milestones, and the final report download once the case is **Report ready** or **Closed** |
@@ -166,4 +166,4 @@ supabase/migrations/          SQL schema, RLS and storage policies
 
 ## Content guidelines
 
-The platform must not promise guaranteed results or recovery of funds. Keep that in mind when you edit copy in `src/lib/constants.ts` and `src/app/page.tsx`. The `scam_recovery` service type is an internal identifier only. It is shown to users as "Scam Investigation & Tracing".
+The platform must not promise guaranteed results or recovery of funds. Keep that in mind when you edit copy in `src/lib/constants.ts` and `src/app/page.tsx`. The `scam_recovery` service type is an internal identifier only. It is shown to users as "Scam & Fraud Tracing".

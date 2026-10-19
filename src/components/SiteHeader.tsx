@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { getCurrentUser } from "@/lib/auth";
+import { startHref } from "@/lib/constants";
 import { LogoMark } from "@/components/icons";
 
 export async function SiteHeader() {
@@ -35,7 +36,7 @@ export async function SiteHeader() {
               <Link href="/login" className="btn-ghost btn-sm">
                 Log in
               </Link>
-              <Link href="/start" className="btn-primary btn-sm">
+              <Link href={startHref("infidelity")} className="btn-primary btn-sm">
                 Start a case
               </Link>
             </>

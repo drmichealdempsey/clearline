@@ -4,8 +4,14 @@ import { IntakeForm } from "./IntakeForm";
 
 export const metadata: Metadata = { title: "Start a case" };
 
-export default function StartPage({ searchParams }: { searchParams: { service?: string } }) {
-  const initialService = isServiceType(searchParams.service) ? searchParams.service : null;
+export default function StartPage({
+  searchParams,
+}: {
+  searchParams: { type?: string; service?: string };
+}) {
+  // `type` is the current parameter; `service` is still accepted for older links.
+  const requested = searchParams.type ?? searchParams.service;
+  const initialService = isServiceType(requested) ? requested : null;
 
   return (
     <div className="container-page py-10 sm:py-16">
